@@ -33,7 +33,7 @@ void MainWindow::on_loginbutton_clicked()
     }
 
     QSqlQuery loginqry;
-    if (loginqry.exec("select * from employees where who = '0' and id ='"+username+"' and password ='"+password+"'")){
+    if (loginqry.exec("select * from employees where who = '1' and id ='"+username+"' and password ='"+password+"'")){
         int count = 0;
         while (loginqry.next()){
             count++;
@@ -48,7 +48,5 @@ void MainWindow::on_loginbutton_clicked()
             ui->loginstatus->setText("Incorrect Username or Password");
     }
 
-    /*dboard= new Dashboard(this);
-    dboard->show();*/
 }
 
