@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtSql>
+#include <QtDebug>
+#include <QFileInfo>
+
 #include "dashboard.h"
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +26,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QSqlDatabase mydb;
     Dashboard *dboard;
 };
 #endif // MAINWINDOW_H
