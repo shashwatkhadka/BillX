@@ -39,7 +39,7 @@ void MainWindow::on_loginbutton_clicked()
             count++;
         }
         if (count==1){
-            ui->loginstatus->setText("Username and Password is correct");
+            ui->loginstatus->setText("Correct Username and Password");
             dboard= new Dashboard(this);
             dboard->show();}
         if (count>1)
