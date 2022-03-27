@@ -7,10 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("D:/Project/BillX/Database/data1.db");
-
-    if (!mydb.open())
+    if (!connectionStart())
         ui -> loginstatus -> setText("Database Fail");
     else
         ui -> loginstatus -> setText("Database Connected");
@@ -27,26 +24,31 @@ void MainWindow::on_loginbutton_clicked()
     username = ui->lineEdit_username->text();
     password = ui->lineEdit_password->text();
 
-    if(!mydb.isOpen()){
+    if(!connectionStart()){
         qDebug()<<"Failed to open database";
         return;
     }
 
+    connectionStart();
+
     QSqlQuery loginqry;
-    if (loginqry.exec("select * from employees where who = '1' and id ='"+username+"' and password ='"+password+"'")){
+    loginqry.prepare("select * from employees where who = '1' and id ='"+username+"' and password ='"+password+"'");
+    if (loginqry.exec()){
         int count = 0;
         while (loginqry.next()){
             count++;
         }
         if (count==1){
             ui->loginstatus->setText("Correct Username and Password");
-            dboard= new Dashboard(this);
-            dboard->show();}
+            connectionClose();
+            this -> hide();
+            dboard = new Dashboard(this);
+            dboard -> show();
+        }
         if (count>1)
             ui->loginstatus->setText("Duplicate Username and Password");
         if (count<1)
             ui->loginstatus->setText("Incorrect Username or Password");
     }
-
 }
 
