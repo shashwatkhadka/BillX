@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>billx1.png</file>
+        <file>home.png</file>
+        <file>logotext.png</file>
+        <file>search.png</file>
+        <file>add.png</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>background.jpg</file>
+    </qresource>
+</RCC>
