@@ -15,6 +15,9 @@ public:
     explicit RegisterAccount(QWidget *parent = nullptr);
     ~RegisterAccount();
 
+private slots:
+    void on_pushButton_register_clicked();
+
 private:
     Ui::RegisterAccount *ui;
 };

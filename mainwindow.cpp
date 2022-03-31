@@ -20,8 +20,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_loginbutton_clicked()
 {
-    QString username, password;
-    username = ui->lineEdit_username->text();
+    QString phonenumber, password;
+    phonenumber = ui->lineEdit_phonenumber->text();
     password = ui->lineEdit_password->text();
 
     if(!connectionStart()){
@@ -32,7 +32,7 @@ void MainWindow::on_loginbutton_clicked()
     connectionStart();
 
     QSqlQuery loginqry;
-    loginqry.prepare("select * from employees where who = '1' and id ='"+username+"' and password ='"+password+"'");
+    loginqry.prepare("SELECT * FROM reg_database WHERE RegType = 'E' and PhoneNumber ='"+phonenumber+"' and password ='"+password+"'");
     if (loginqry.exec()){
         int count = 0;
         while (loginqry.next()){
@@ -48,7 +48,7 @@ void MainWindow::on_loginbutton_clicked()
         if (count>1)
             ui->loginstatus->setText("Duplicate Username and Password");
         if (count<1)
-            ui->loginstatus->setText("Incorrect Username or Password");
+            ui->loginstatus->setText("Incorrect Phone Number or Password");
     }
 }
 

@@ -45,7 +45,7 @@
        <x>20</x>
        <y>50</y>
        <width>261</width>
-       <height>231</height>
+       <height>249</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -101,7 +101,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_password"/>
+         <widget class="QLineEdit" name="lineEdit_password">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -127,6 +131,45 @@
     <property name="text">
      <string>TextLabel</string>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>181</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Registration Type</string>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>160</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QRadioButton" name="radioButton_member">
+        <property name="text">
+         <string>Member</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_employee">
+        <property name="text">
+         <string>Employee</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
  </widget>
