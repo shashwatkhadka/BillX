@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap pix("C:/Users/binay/OneDrive/Desktop/Project/BillX/binaya/logo/logo");
+    QPixmap pix("C:/Users/binay/OneDrive/Desktop/logo/logo");
     ui->logo_billx->setPixmap(pix.scaled(50,50,Qt::KeepAspectRatio));
 
     QPixmap pixmap;
@@ -50,7 +50,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    QMessageBox::StandardButton reply = QMessageBox ::question(this,"Hey!!","Do you want to apply scheme ??",QMessageBox::Yes | QMessageBox::No);
 
+    if(reply == QMessageBox :: Yes){
+        QApplication::quit();
+    } else {
+        qDebug() << "No is clicked";
+
+    }
 
 }
 
@@ -70,29 +77,11 @@ void MainWindow::on_pushButton_3_clicked()
 void MainWindow::on_pushButton_5_clicked()
 {
 
-
 }
 
 
 void MainWindow::on_pushButton_4_clicked()
 {
-
-
-
-
-}
-
-
-void MainWindow::on_pushButton_6_clicked()
-{
-    QMessageBox::StandardButton reply = QMessageBox ::warning(this,"Exit","Do you want to Exit ??",QMessageBox::Yes | QMessageBox::No);
-
-    if(reply == QMessageBox :: Yes){
-        QApplication::quit();
-    } else {
-        qDebug() << "No is clicked";
-
-    }
 
 }
 
