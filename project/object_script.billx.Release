@@ -1,0 +1,14 @@
+release/createbill.o
+release/dashboard.o
+release/inventory.o
+release/main.o
+release/mainwindow.o
+release/registeraccount.o
+release/viewaccounts.o
+release/qrc_Resource.o
+release/moc_createbill.o
+release/moc_dashboard.o
+release/moc_inventory.o
+release/moc_mainwindow.o
+release/moc_registeraccount.o
+release/moc_viewaccounts.o
