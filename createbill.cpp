@@ -44,9 +44,6 @@ void CreateBill::on_pushButton_clicked()
 
     if(reply == QMessageBox :: Yes){
         QApplication::quit();
-    } else {
-        qDebug() << "No is clicked";
-
     }
 }
 

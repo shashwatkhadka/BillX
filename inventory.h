@@ -15,6 +15,9 @@ public:
     explicit Inventory(QWidget *parent = nullptr);
     ~Inventory();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Inventory *ui;
 };
