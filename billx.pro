@@ -11,26 +11,32 @@ CONFIG += c++11
 SOURCES += \
     createbill.cpp \
     dashboard.cpp \
+    employee_registration.cpp \
     inventory.cpp \
     main.cpp \
     mainwindow.cpp \
-    registeraccount.cpp \
+    member_registration.cpp \
+    registerdialog.cpp \
     viewaccounts.cpp
 
 HEADERS += \
     createbill.h \
     dashboard.h \
+    employee_registration.h \
     inventory.h \
     mainwindow.h \
-    registeraccount.h \
+    member_registration.h \
+    registerdialog.h \
     viewaccounts.h
 
 FORMS += \
     createbill.ui \
     dashboard.ui \
+    employee_registration.ui \
     inventory.ui \
     mainwindow.ui \
-    registeraccount.ui \
+    member_registration.ui \
+    registerdialog.ui \
     viewaccounts.ui
 
 # Default rules for deployment.

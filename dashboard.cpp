@@ -38,7 +38,7 @@ void Dashboard::on_viewaccountbutton_clicked()
 
 void Dashboard::on_registerbutton_clicked()
 {
-    ra= new RegisterAccount(this);
+    ra= new registerDialog(this);
     ra->show();
 }
 

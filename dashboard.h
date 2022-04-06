@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include "createbill.h"//class name is CreateBill
 #include "inventory.h"// class name is Inventory
-#include "registeraccount.h"//class name is RegisterAccount
+#include "registerdialog.h"//class name is RegisterAccount
 #include "viewaccounts.h"//class name is ViewAccounts
 
 namespace Ui {
@@ -32,7 +32,7 @@ private:
     Ui::Dashboard *ui;
     CreateBill *cb;
     Inventory *iv;
-    RegisterAccount *ra;
+    registerDialog *ra;
     ViewAccounts *va;
 };
 
