@@ -1,19 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'viewaccounts.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.1.3)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
 #include <memory>
-#include "../viewaccounts.h"
+#include "../../BillX/viewaccounts.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'viewaccounts.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.1.3. It"
+#error "This file was generated using the moc from 6.2.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -39,7 +39,7 @@ QT_MOC_LITERAL(0, 12) // "ViewAccounts"
 static const uint qt_meta_data_ViewAccounts[] = {
 
  // content:
-       9,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
@@ -66,7 +66,12 @@ const QMetaObject ViewAccounts::staticMetaObject = { {
     qt_meta_data_ViewAccounts,
     qt_static_metacall,
     nullptr,
-    nullptr,
+qt_incomplete_metaTypeArray<qt_meta_stringdata_ViewAccounts_t
+, QtPrivate::TypeAndForceComplete<ViewAccounts, std::true_type>
+
+
+
+>,
     nullptr
 } };
 

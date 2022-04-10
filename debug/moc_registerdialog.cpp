@@ -1,19 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'registerdialog.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.1.3)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
 #include <memory>
-#include "../registerdialog.h"
+#include "../../BillX/registerdialog.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'registerdialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.1.3. It"
+#error "This file was generated using the moc from 6.2.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -45,7 +45,7 @@ QT_MOC_LITERAL(67, 30) // "on_pushButton_employee_clicked"
 static const uint qt_meta_data_registerDialog[] = {
 
  // content:
-       9,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        3,   14, // methods
@@ -56,9 +56,9 @@ static const uint qt_meta_data_registerDialog[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   32,    2, 0x08,    0 /* Private */,
-       3,    0,   33,    2, 0x08,    1 /* Private */,
-       4,    0,   34,    2, 0x08,    2 /* Private */,
+       1,    0,   32,    2, 0x08,    1 /* Private */,
+       3,    0,   33,    2, 0x08,    2 /* Private */,
+       4,    0,   34,    2, 0x08,    3 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -74,6 +74,7 @@ void registerDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         auto *_t = static_cast<registerDialog *>(_o);
         (void)_t;
         switch (_id) {
+        /*case 0: _t->on_pushButton_clicked(); break;*/
         case 1: _t->on_pushButton_member_clicked(); break;
         case 2: _t->on_pushButton_employee_clicked(); break;
         default: ;
@@ -89,7 +90,7 @@ const QMetaObject registerDialog::staticMetaObject = { {
     qt_static_metacall,
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_registerDialog_t
-
+, QtPrivate::TypeAndForceComplete<registerDialog, std::true_type>
 , QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 

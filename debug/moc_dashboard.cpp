@@ -1,19 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'dashboard.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.1.3)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
 #include <memory>
-#include "../dashboard.h"
+#include "../../BillX/dashboard.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'dashboard.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.1.3. It"
+#error "This file was generated using the moc from 6.2.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -47,7 +47,7 @@ QT_MOC_LITERAL(95, 25) // "on_registerbutton_clicked"
 static const uint qt_meta_data_Dashboard[] = {
 
  // content:
-       9,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        4,   14, // methods
@@ -58,10 +58,10 @@ static const uint qt_meta_data_Dashboard[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   38,    2, 0x08,    0 /* Private */,
-       3,    0,   39,    2, 0x08,    1 /* Private */,
-       4,    0,   40,    2, 0x08,    2 /* Private */,
-       5,    0,   41,    2, 0x08,    3 /* Private */,
+       1,    0,   38,    2, 0x08,    1 /* Private */,
+       3,    0,   39,    2, 0x08,    2 /* Private */,
+       4,    0,   40,    2, 0x08,    3 /* Private */,
+       5,    0,   41,    2, 0x08,    4 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -95,7 +95,7 @@ const QMetaObject Dashboard::staticMetaObject = { {
     qt_static_metacall,
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_Dashboard_t
-
+, QtPrivate::TypeAndForceComplete<Dashboard, std::true_type>
 , QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 

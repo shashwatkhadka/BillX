@@ -1,9 +1,9 @@
 #include "createbill.h"
 #include "ui_createbill.h"
 #include <QMessageBox>
-#include<QTimer>
-#include<QDateTime>
-#include"mainwindow.h"
+#include <QTimer>
+#include <QDateTime>
+#include "mainwindow.h"
 
 CreateBill::CreateBill(QWidget *parent) :
     QMainWindow(parent),
@@ -49,42 +49,109 @@ void CreateBill::on_pushButton_clicked()
     }
 }
 
-
-void CreateBill::on_pushButton_2_clicked()
+void CreateBill::on_pushButton_save_clicked()
 {
+    QString billno, mobileno, add, productid,item, rate, quantity, price, quan, q;
+    float pr, qu;
+    MainWindow conn;
+
+    conn.connectionStart();
+
+    billno=ui->lineEdit_billno->text();
+    add=ui->lineEdit_add->text();
+    mobileno=ui->lineEdit_mobileno->text();
+    productid=ui->lineEdit_productcode->text();
+
+    quantity=ui->lineEdit_quantity->text();
 
 
+    QSqlQuery *logqry=new QSqlQuery(conn.mydb);
+
+    QSqlQuery irqry, inqry;
+
+    irqry.exec("SELECT item, Price, Quantity FROM inventory WHERE productid='"+productid+"'");
+
+    while(irqry.next()){
+        item = irqry.value(0).toString();
+        rate = irqry.value(1).toString();
+        quan = irqry.value(2).toString();
+        qDebug() << item << rate;
+    }
+
+    qu = quan.toInt()-quantity.toInt();
+    q=QString::number(qu);
+
+    inqry.prepare("UPDATE inventory SET Quantity = '"+q+"' WHERE productid='"+productid+"'");
+
+    pr=rate.toFloat()*quantity.toFloat();
+    price=QString::number(pr);
+
+    logqry->prepare("INSERT INTO billlog(billnumber, address, mobilenumber, productcode, item, rate, quantity, price) "
+                    "values('"+billno+"', '"+add+"','"+mobileno+"','"+productid+"','"+item+"','"+rate+"','"+quantity+"','"+price+"')");
+    if(logqry->exec()){
+        if(inqry.exec()) qDebug()<<"query runs"; else qDebug()<<"query doesn't run";
+        QMessageBox::information(this, tr("Save"), tr("Data Saved"));
+    }
+    else{
+        qDebug()<<"Bill not saved";
+        QMessageBox::critical(this, tr("Save"), tr("Not Saved, Check your Values"));
+    }
+
+    conn.connectionClose();
 }
 
 
-void CreateBill::on_pushButton_5_clicked()
+void CreateBill::on_pushButton_print_clicked()
 {
-    QString productcode,quantity,val;
+    QString billno, price;
 
-    productcode=ui->lineEdit_productcode->text();
-    quantity=ui->lineEdit_quantity->text();
+    billno=ui->lineEdit_billno->text();
 
     MainWindow conn;
     QSqlQueryModel *modal=new QSqlQueryModel();
 
     conn.connectionStart();
-    QSqlQuery *qry=new QSqlQuery(conn.mydb);
+    QSqlQuery *billqry=new QSqlQuery(conn.mydb);
 
-    qry->prepare("SELECT ProductCode , Item , Price FROM inventory WHERE ProductCode='"+productcode+"'");
-    qry->exec();
+    billqry->prepare("SELECT * FROM billlog WHERE billnumber='"+billno+"'");
+    billqry->exec();
 
-    modal->setQuery(*qry);
+    while (billqry->next()){
+        price = billqry->value(7).toString();
+    }
+
+    modal->setQuery(std::move(*billqry));
 
     ui->tableView->setModel(modal);
 
-    //getting data from a particular place in the qtableview:
-    val= ui->tableView->model()->data(ui->tableView->model()->index(0,2)).toString();//index(row,column)
+    total=total+price.toFloat();
 
-    ival=val.toInt();
-    iquantity=quantity.toInt();
-    total=total+ival*iquantity;
+    ui->label_value->setText(QString::number(total));
 
-     ui->label_value->setText(QString::number(total));
+    conn.connectionClose();
+}
+
+
+void CreateBill::on_tableView_activated(const QModelIndex &index)
+{
+    QString val=ui->tableView->model()->data(index).toString();
+
+    MainWindow conn;
+
+    conn.connectionStart();
+
+    QSqlQuery bviewqry;
+
+    bviewqry.prepare("SELECT * FROM billlog where mobilenumber = '"+val+"' or billnumber = '"+val+"'");
+    if(bviewqry.exec()){
+        while(bviewqry.next()){
+            ui->lineEdit_mobileno->setText(bviewqry.value(2).toString());
+            ui->lineEdit_add->setText(bviewqry.value(1).toString());
+            ui->lineEdit_productcode->setText(bviewqry.value(3).toString());
+            ui->lineEdit_quantity->setText(bviewqry.value(4).toString());
+        }
+    }
+
     conn.connectionClose();
 }
 

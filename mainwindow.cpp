@@ -49,6 +49,7 @@ void MainWindow::on_loginbutton_clicked()
             ui->loginstatus->setText("Duplicate Username and Password");
         if (count<1)
             ui->loginstatus->setText("Incorrect Phone Number or Password");
+        connectionClose();
     }
 }
 
