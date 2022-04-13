@@ -155,3 +155,21 @@ void CreateBill::on_tableView_activated(const QModelIndex &index)
     conn.connectionClose();
 }
 
+
+void CreateBill::on_pushButton_4_clicked()
+{
+
+}
+
+
+void CreateBill::on_pushButton_2_clicked()
+{
+    ui->lineEdit_billno->clear();
+    ui->lineEdit_mobileno->clear();
+    ui->lineEdit_add->clear();
+    ui->lineEdit_productcode->clear();
+    ui->lineEdit_quantity->clear();
+
+
+}
+

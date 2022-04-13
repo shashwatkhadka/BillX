@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     createbill.cpp \
     dashboard.cpp \
+    edit.cpp \
     employee_registration.cpp \
     inventory.cpp \
     main.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
 HEADERS += \
     createbill.h \
     dashboard.h \
+    edit.h \
     employee_registration.h \
     inventory.h \
     mainwindow.h \
@@ -32,6 +34,7 @@ HEADERS += \
 FORMS += \
     createbill.ui \
     dashboard.ui \
+    edit.ui \
     employee_registration.ui \
     inventory.ui \
     mainwindow.ui \

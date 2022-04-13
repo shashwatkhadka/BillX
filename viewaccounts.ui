@@ -91,6 +91,26 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>652</x>
+      <y>30</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.232955 rgba(0, 148, 116, 255), stop:0.568182 rgba(44, 204, 149, 255), stop:0.875 rgba(0, 168, 132, 251));
+font: 700 10pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);
+border: 1px;
+border-radius: 3px;</string>
+    </property>
+    <property name="text">
+     <string>Exit</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

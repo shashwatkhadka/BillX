@@ -1,6 +1,8 @@
 #include "inventory.h"
 #include "mainwindow.h"
 #include "ui_inventory.h"
+#include "edit.h"
+
 
 Inventory::Inventory(QWidget *parent) :
     QMainWindow(parent),
@@ -27,6 +29,7 @@ void Inventory::on_pushButton_2_clicked()
     qry -> exec();
     modal->setQuery(*qry);
     ui->tableView->setModel(modal);
+    qry->clear();
 
     conn.connectionClose();
     qDebug() <<(modal->rowCount());
@@ -43,30 +46,26 @@ void Inventory::on_searchbutton_clicked()
     conn.connectionStart();
     QSqlQuery* qry=new QSqlQuery(conn.mydb);
 
-    qry->prepare("select * from inventory where item='"+name+"'");
+    qry->prepare("select * from inventory where item='"+name+"' or productid='"+name+"'");
 
     qry -> exec();
     modal->setQuery(*qry);
     ui->tableView->setModel(modal);
+    qry->clear();
 
     conn.connectionClose();
     qDebug() <<(modal->rowCount());
 
 }
-/*MainWindow conn;
-QString eid;
-eid=ui->searchbutton->text();
 
-if(!conn.connectionStart()){
 
-    qDebug()<<"failed to open database";
-    return ;
+
+void Inventory::on_pushButton_3_clicked()
+{
+    /*Edit dialog;
+       dialog.setModal(true);
+       dialog.exec();*/
+    e = new Edit();
+    e->show();
 }
-conn.connectionStart();
-QSqlQuery qry;
-qry.prepare("select * from inventory where productid='"+eid+"'");
-*/
-
-
-
 
