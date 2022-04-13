@@ -15,6 +15,9 @@ public:
     explicit ViewAccounts(QWidget *parent = nullptr);
     ~ViewAccounts();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::ViewAccounts *ui;
 };

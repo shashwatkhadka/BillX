@@ -1,5 +1,6 @@
 #include "dashboard.h"
 #include "ui_dashboard.h"
+#include <QMessageBox>
 
 Dashboard::Dashboard(QWidget *parent) :
     QMainWindow(parent),
@@ -40,5 +41,15 @@ void Dashboard::on_registerbutton_clicked()
 {
     ra= new registerDialog(this);
     ra->show();
+}
+
+
+void Dashboard::on_pushButton_clicked()
+{
+    QMessageBox::StandardButton reply = QMessageBox ::warning(this,"Exit","Do you want to sign out ??",QMessageBox::Yes | QMessageBox::No);
+
+    if(reply == QMessageBox :: Yes){
+        QApplication::quit();
+    }
 }
 

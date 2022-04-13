@@ -1,6 +1,7 @@
 #include "viewaccounts.h"
 #include "ui_viewaccounts.h"
 #include "mainwindow.h"
+#include<QMessageBox>
 
 ViewAccounts::ViewAccounts(QWidget *parent) :
     QMainWindow(parent),
@@ -33,3 +34,13 @@ ViewAccounts::~ViewAccounts()
 {
     delete ui;
 }
+
+void ViewAccounts::on_pushButton_clicked()
+{
+    QMessageBox::StandardButton reply = QMessageBox ::warning(this,"Exit","Do you want to Exit ??",QMessageBox::Yes | QMessageBox::No);
+
+    if(reply == QMessageBox :: Yes){
+        QApplication::quit();
+    }
+}
+

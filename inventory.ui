@@ -193,9 +193,10 @@ border-radius:15px;
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">border:2px solid;
-color:black;
-border-radius:15px;</string>
+          <string notr="true">border:1px white;
+color:white;
+border-radius:15px;
+background-color:lightblue;</string>
          </property>
          <property name="text">
           <string/>
@@ -261,11 +262,11 @@ border-radius:15px;</string>
           </sizepolicy>
          </property>
          <property name="styleSheet">
-          <string notr="true">border-radius:15px;
+          <string notr="true">border:2px solid;
+border-radius:15px;
 color:white;
     
      
-background-color:#D6BBDC;
 
 
 </string>
@@ -299,7 +300,8 @@ background-color:#D6BBDC;
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color:black;
+             <string notr="true">border:0px;
+color:black;
 </string>
             </property>
             <property name="text">
@@ -378,7 +380,7 @@ background-color:white;
 }</string>
             </property>
             <property name="text">
-             <string>PushButton</string>
+             <string>Edit</string>
             </property>
            </widget>
           </item>
@@ -510,8 +512,7 @@ background-color:white;
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:#4b5ebb;
-border-radius:20px;</string>
+             <string notr="true"/>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -561,7 +562,7 @@ border-radius:20px;</string>
               <rect>
                <x>-5</x>
                <y>1</y>
-               <width>707</width>
+               <width>701</width>
                <height>371</height>
               </rect>
              </property>
